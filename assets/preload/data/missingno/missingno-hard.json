@@ -30732,7 +30732,7 @@
 				"mustHitSection": true
 			}
 		],
-		"gfVersion": "nonebf",
+		"gfVersion": "gf",
 		"eventObjects": [
 			{
 				"type": "BPM Change",
@@ -30741,12 +30741,10 @@
 				"name": "0SM"
 			}
 		],
-		"chartVersion": "2",
 		"song": "Missingno",
-		"validScore": true,
+		"validScore": false,
 		"stage": "missingno",
 		"needsVoices": true,
-		"noteStyle": "normal",
 		"speed": 2.7,
 		"bpm": 120
 	}
