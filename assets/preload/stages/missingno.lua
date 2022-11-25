@@ -37,40 +37,9 @@ setProperty('BG_Assets2.antialiasing', false)
   setProperty('skipCountdown',true)
 
 end
-local shaderName = "glitch"
 local distort = 0
-function onUpdate()
-    runHaxeCode([[
-        shader1.setFloat("time", ]] .. os.clock() .. [[);
-        shader1.setFloat("distort", ]]..distort..[[);
-
-    ]])
-    if curStep >= 192 and curStep <= 368 then -- please help it doesnt work aGhhh
-        if distort < 1 then
-            distort = distort + 0.0001
-        end
-    end
-    if curStep == 390 then
-        distort = 0
-    end
-end
 function onCreatePost()
     setProperty('gf.visible',false)
-
-    runHaxeCode([[
-        var shaderName = "]] .. shaderName .. [[";
-        
-        game.initLuaShader(shaderName);
-        game.initLuaShader("pincushion");
-
-        shader0 = game.createRuntimeShader(shaderName);
-        shader1 = game.createRuntimeShader("pincushion");
-
-        game.camGame.setFilters([new ShaderFilter(shader0),new ShaderFilter(shader1)]);
-      
-
-    ]])
-
     setProperty('iconP2.alpha',0)
     setProperty('dad.alpha',0)
     setProperty('camHUD.alpha',0)
