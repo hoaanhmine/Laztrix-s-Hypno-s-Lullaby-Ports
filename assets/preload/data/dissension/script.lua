@@ -22,13 +22,6 @@ function onBeatHit()
 		}
 	]]);
 end
-function onStepHit()
-	if curStep == 912 then
-		runHaxeCode([[
-			game.add(fakeDad);
-		]]);
-	end
-	
 end
 function onUpdate(elapsed)
 	runHaxeCode([[

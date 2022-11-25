@@ -25,16 +25,6 @@ function onStepHit()
     end
  
     if curStep == 400 then
-        runHaxeCode([[
-            game.initLuaShader('aberration');
-
-            shader0 = game.createRuntimeShader('aberration');
-
-            game.camGame.setFilters([new ShaderFilter(shader0)]);
-            shader0.setFloat('aberration',0.05);
-            shader0.setFloat('effectTime',0.1);
-            ]])  
-        room(false)
         setProperty('boyfriend.visible',true)
         setProperty('dad.alpha',0)
         setProperty('boyfriend.alpha',0)
