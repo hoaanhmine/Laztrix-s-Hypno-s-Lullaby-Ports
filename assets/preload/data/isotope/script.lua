@@ -9,29 +9,6 @@ function onCreatePost()
 	setPropertyFromGroup('playerStrums', 1, 'x', defaultOpponentStrumX1)
 	setPropertyFromGroup('playerStrums', 2, 'x', defaultOpponentStrumX2)
 	setPropertyFromGroup('playerStrums', 3, 'x', defaultOpponentStrumX3)
-
-
-
-
-
-    initLuaShader('redAberration')
-  
-    affection = 30
-    angaffection = 10
-    shaderName = "vignetteGlitch"
-    shaderCoordFix() -- initialize a fix for textureCoord when resizing game window
-
-    makeLuaSprite("tempShader0")
-    runHaxeCode([[
-        var shaderName = "]] .. shaderName .. [[";
-        
-        game.initLuaShader(shaderName, 130);
-        
-        var shader0 = game.createRuntimeShader(shaderName);
-        game.camGame.setFilters([new ShaderFilter(shader0)]);
-        game.getLuaObject("tempShader0").shader = shader0; // setting it into temporary sprite so luas can set its shader uniforms/properties
-        return;
-    ]])
 end
 
 function funnynote()
@@ -111,21 +88,6 @@ function onStepHit()
 end
 local aberinten = 0
 local aberinit = 0
-function onUpdate()
-    if curStep >= 1104 then
-        if aberinit > 0 then
-            aberinit = aberinit - 0.01
-         end
-         if aberinten > 0 then
-             aberinten = aberinten - 0.01
-         end
-    setShaderFloat('tempShader0', 'time', os.clock() * 0.6)
-    setShaderFloat('tempShader0', 'prob', 0.9)
-    setShaderFloat('tempShader0', 'intensity', 0.8)
-    setShaderFloat('dad', 'intensity', aberinten)
-    setShaderFloat('dad', 'initial', aberinit)
-    end
-end
 function onBeatHit()
    if curBeat % 2 == 0 then
     funnynote()
@@ -134,35 +96,6 @@ function onBeatHit()
         aberinten = 2
         aberinit = 0.5
        
-    end
-end
-
-function shaderCoordFix()
-    runHaxeCode([[
-        resetCamCache = function(?spr) {
-            if (spr == null || spr.filters == null) return;
-            spr.__cacheBitmap = null;
-            spr.__cacheBitmapData = null;
-        }
-        
-        fixShaderCoordFix = function(?_) {
-            resetCamCache(game.camGame.flashSprite);
-            resetCamCache(game.camHUD.flashSprite);
-            resetCamCache(game.camOther.flashSprite);
-        }
-    
-        FlxG.signals.gameResized.add(fixShaderCoordFix);
-        fixShaderCoordFix();
-        return;
-    ]])
-    
-    local temp = onDestroy
-    function onDestroy()
-        runHaxeCode([[
-            FlxG.signals.gameResized.remove(fixShaderCoordFix);
-            return;
-        ]])
-        if (temp) then temp() end
     end
 end
 
