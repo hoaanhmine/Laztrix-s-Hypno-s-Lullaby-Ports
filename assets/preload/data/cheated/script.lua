@@ -33,16 +33,6 @@ function onStepHit()
         setProperty('camGame.visible',true)
     end
     if curStep == 656 then
-        room(false)
-        runHaxeCode([[
-            game.initLuaShader('aberration');
-
-            shader0 = game.createRuntimeShader('aberration');
-
-            game.camGame.setFilters([new ShaderFilter(shader0)]);
-            shader0.setFloat('aberration',0.05);
-            shader0.setFloat('effectTime',0.1);
-            ]])  
         setProperty('dad.alpha',0)
         setProperty('boyfriend.alpha',0)
         setProperty('defaultCamZoom',0.85)
