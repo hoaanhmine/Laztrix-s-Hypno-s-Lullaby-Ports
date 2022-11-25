@@ -22,7 +22,6 @@ function onBeatHit()
 		}
 	]]);
 end
-end
 function onUpdate(elapsed)
 	runHaxeCode([[
 		if (game.startedCountdown && game.generatedMusic)
