@@ -83,8 +83,6 @@ function onDestroy()
     end
 end
 function onCreatePost()
-    initLuaShader("wavybu")
-    initLuaShader('vignetteApparition')
 
     setSpriteShader('redOverlay','vignetteApparition')
 
@@ -115,8 +113,6 @@ function onTweenCompleted(t)
     end
 end
 function onUpdate()
-    setShaderFloat('redOverlay','time',os.clock()* 1.5)
-    setShaderFloat('redOverlay','vignetteIntensity',0.1)
     if curStep == 96 or curStep == 112 or curStep == 128 or curStep == 136 then
         shaky(0.2)
     end
@@ -138,19 +134,5 @@ function onUpdate()
     if curStep == 3464 then
         setProperty('redOverlay.visible',true)
 
-        setSpriteShader('bgalt','wavybu')
-        setSpriteShader('flooralt','wavybu')
-        setSpriteShader('gravesalt','wavybu')
     end
-end
-function onUpdatePost()
-   
-     
-    setShaderFloat('bgalt','wavy',curwav)
-    setShaderFloat('flooralt','wavy',curwav)
-    setShaderFloat('gravesalt','wavy',curwav)
-    
-    setShaderFloat('bgalt','iTime',os.clock())
-    setShaderFloat('flooralt','iTime',os.clock())
-    setShaderFloat('gravesalt','iTime',os.clock())
 end
