@@ -1,0 +1,27 @@
+hypnos lullaby lyrics stuff by Jarcrafted Stuff ( https://www.youtube.com/channel/UCY0O2hv034OSiiJAA9No4Fw )
+death toll lua stage by Carlツ ( https://www.youtube.com/channel/UCcwMlW2ISmZ_v6x9LolOR6Q )
+some events are from psych engine community server
+the rest are by Laztrix ( CurLazt#8990 )
+
+
+INFO:
+
+[CURRENT MOD] : ON-HOLD 
+reason: its on-hold for now cus i dont want to doing this again. this port will continued when hypnos lullaby v2 restored is out.
+
+[VERSION] : 1.0 (Release Build type 12)
+* type means the build has been modified 12 times
+
+[CHANGELOG]
+  1.0: -Fix Brimstone Note Offset
+       -Shinto, Brimstone, Missingno, Shitno now have their own pixel note skin.
+       -Added unfinished Monochrome 
+       -Added Cheated
+       -Added Dissension
+       -Finishing Isotope (95%)
+       -Finishing Death Toll (90%)
+       -Finishing Brimstone (80%)
+       -Isotope, Death Toll, Missingno now support downscroll and middlescroll (except missingno doesnt support middlescroll)
+    Extra note:
+        ! Monochrome and Brimstone have 1 issue, the game will crash at mid song.
+-------------------------
